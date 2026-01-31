@@ -1,0 +1,126 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="Register.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+</head>
+<body>
+    <div class="register-container">
+        <h1>账号注册</h1>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-step active" id="step1">
+                    <div class="step-number">1</div>
+                    <div class="step-text">电子邮箱</div>
+                </div>
+                <div class="progress-arrow"></div>
+                <div class="progress-step" id="step2">
+                    <div class="step-number">2</div>
+                    <div class="step-text">完善信息</div>
+                </div>
+                <div class="progress-arrow"></div>
+                <div class="progress-step" id="step3">
+                    <div class="step-number">3</div>
+                    <div class="step-text">完成注册</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="register-form">
+            <div id="form-step1" class="form-step active">
+                <div class="input-group">
+                    <label for="email-local">邮箱:</label>
+                    <div class="email-input-group">
+                        <input type="text" id="email-local" name="email-local" required placeholder="example">
+                        <span class="email-at">@</span>
+                        <input type="text" id="email-domain" name="email-domain" required placeholder="domain.com">
+                    </div>
+                </div>
+                
+                <div id="emailError" class="error-message" style="display: none;"></div>
+                
+                <div class="button-group">
+                    <button type="button" class="verify-btn" id="verifyBtn">核验</button>
+                </div>
+            </div>
+
+            <div id="form-step2" class="form-step">
+                <form id="registerForm">
+                    <input type="hidden" id="hidden-email" name="email" value="">
+                    
+                    <div class="input-group">
+                        <label for="nickname">昵称:</label>
+                        <input type="text" id="nickname" name="nickname" maxlength="20" placeholder="请输入昵称" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password">密码:</label>
+                        <input type="password" id="password" name="password" required minlength="6" maxlength="16" pattern=".{6,16}" placeholder="密码请设置6-16位字符">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="confirm-password">确认密码:</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required minlength="6" maxlength="16" pattern=".{6,16}" placeholder="密码请设置6-16位字符">
+                    </div>
+                    
+                    <div class="input-row">
+                        <div class="input-group half">
+                            <label for="gender">性别:</label>
+                            <select id="gender" name="gender">
+                                <option value="U">保密</option>
+                                <option value="M">男</option>
+                                <option value="F">女</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group half">
+                            <label for="tel">电话:</label>
+                            <input type="text" id="tel" name="tel" maxlength="20" placeholder="请输入电话">
+                        </div>
+                    </div>
+                    
+                    <div class="input-row">
+                        <div class="input-group half">
+                            <label for="province">省份:</label>
+                            <select id="province" name="province"></select>
+                        </div>
+                        
+                        <div class="input-group half">
+                            <label for="city">城市:</label>
+                            <select id="city" name="city"></select>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="self-intro">个人简介:</label>
+                        <textarea id="self-intro" name="self-intro" rows="2" maxlength="200" placeholder="请输入个人简介"></textarea>
+                    </div>
+                    
+                    <div id="formError" class="error-message" style="display: none;"></div>
+                    
+                    <div class="button-group">
+                        <button type="button" class="back-btn" id="backBtn">返回</button>
+                        <button type="submit" class="submit-btn" id="submitBtn">提交注册</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="form-step3" class="form-step">
+                <div class="success-message">
+                    <h2>注册成功！</h2>
+                    <p>您的账号已创建完成</p>
+                    <a href="../../Login/GLogin/GLogin.html" class="login-link">去登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="Register.js"></script>
+</body>
+</html>

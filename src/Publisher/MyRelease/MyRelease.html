@@ -1,0 +1,136 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的发行影片</title>
+    <link rel="stylesheet" href="MyRelease.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+</head>
+<body>
+    <div class="container">
+        <h1>发行影片</h1>
+        
+        <!-- 搜索功能和添加新影片按钮 -->
+        <div class="header-actions">
+            <button class="btn-add-film" onclick="addNewFilm()">添加新影片</button>
+            <div class="search-bar-container">
+                <form id="searchForm" style="width: 100%;">
+                    <input type="text" name="search" placeholder="搜索影片名称" class="search-input" id="searchInput">
+                    <button type="submit" class="btn-add-film search-button">搜索</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="film-list" id="filmList">
+            <!-- 影片列表将通过JavaScript动态加载 -->
+        </div>
+        
+        <!-- 分页控件 -->
+        <div class="pagination" id="pagination">
+            <!-- 分页按钮将通过JavaScript动态生成 -->
+        </div>
+        
+        <!-- 新影片表单模板，默认隐藏 -->
+        <div id="new-film-form" style="display: none;">
+            <div class="release-film-container">
+                <div class="release-film-header">
+                    <i class="fas fa-film"></i>
+                    <span>发布影片</span>
+                </div>
+                <div class="release-film-content">
+                    <form id="release-form" action="/MyRelease" method="post" enctype="multipart/form-data">  
+                        <div class="layout-row">
+                            <div class="layout-column left-column">
+                                <div class="form-group">
+                                    <label>影片编号:</label>
+                                    <input type="text" id="displayFilmId" disabled>
+                                    <input type="hidden" name="publisherId" id="publisherId">
+                                    <input type="hidden" name="filmId" id="filmId">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="filmName">影片名称:</label>
+                                    <input type="text" id="filmName" name="filmName" placeholder="新影片的片名" required>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    <label for="filmDuration">影片时长:</label>
+                                    <input type="number" id="filmDuration" name="filmDuration" min=1 max=500 step=1 placeholder="不超过500的整数（分钟）" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="minFare">最低票价:</label>
+                                    <input type="text" id="minFare" name="minFare" pattern="^\d{1,2}(\.\d{1,2})?$" placeholder="不超过100的两位小数" title="不超过100的两位小数" required>
+                                </div>
+                                    
+                                <div class="date-row">
+                                    <div class="date-column">
+                                        <div class="form-group">
+                                            <label for="releaseDate">首映日期:</label>
+                                            <input type="date" id="releaseDate" name="releaseDate" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="date-column">
+                                        <div class="form-group">
+                                            <label for="endDate">结映日期:</label>
+                                            <input type="date" id="endDate" name="endDate" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="layout-column right-column">
+                                <div class="poster-container">
+                                    <div class="poster-preview" onclick="document.getElementById('filmPoster').click()">
+                                        <img id="preview" src="" alt="海报预览" style="display: none;">
+                                        <div id="noPreview">点击上传海报</div>
+                                    </div>
+                                    <div id="poster-name" style="display: none; margin-top: 5px; text-align: center; font-size: 12px;"></div>
+                                </div>
+                                <input type="file" id="filmPoster" name="filmPoster" accept="image/jpeg" style="display: none;">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>影片类型 (至少选择1种，最多3种):</label>
+                            <div class="checkbox-group" id="filmTypesContainer">
+                                <!-- 影片类型将通过JavaScript动态生成 -->
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>支持语言:</label>
+                            <div class="checkbox-group language-group" id="filmLanguagesContainer">
+                                <!-- 影片语言将通过JavaScript动态生成 -->
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>视觉效果:</label>
+                            <div class="checkbox-group" id="visualEffectsContainer">
+                                <!-- 视觉效果将通过JavaScript动态生成 -->
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="filmDescription">影片简介:</label>
+                            <textarea id="filmDescription" name="filmDescription" rows="4" maxlength="200" required></textarea>
+                        </div>
+                    
+                        <div class="button-group">
+                            <button type="button" class="btn-cancel" onclick="cancelNewFilm()">取消</button>
+                            <button type="submit" class="btn-confirm">发布</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="MyRelease.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的订单</title>
+    <link rel="stylesheet" href="MyOrders.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div id="navigationBoard"></div>
+    
+    <div class="container">
+        <h1>我的订单</h1>
+        
+        <!-- 状态筛选按钮 -->
+        <div class="status-filters">
+            <button class="filter-btn active" data-status="">全部</button>
+            <button class="filter-btn" data-status="未付">未付</button>
+            <button class="filter-btn" data-status="取消">取消</button>
+            <button class="filter-btn" data-status="已付">已付</button>
+            <button class="filter-btn" data-status="退票">退票</button>
+            <button class="filter-btn" data-status="检票">检票</button>
+            <button class="filter-btn" data-status="暂离">暂离</button>
+            <button class="filter-btn" data-status="完成">完成</button>
+        </div>
+        
+        <!-- 订单列表 -->
+        <div class="order-list" id="orderList">
+            <!-- 订单列表将通过JavaScript动态填充 -->
+        </div>
+        
+        <!-- 分页控件 -->
+        <div class="pagination" id="pagination">
+            <button class="btn-page" id="prevPage" disabled>上一页</button>
+            <div class="page-info">
+                <span>第</span>
+                <input type="number" id="pageInput" min="1" value="1">
+                <span>页 / 共 <span id="totalPages">1</span> 页</span>
+            </div>
+            <button class="btn-page" id="nextPage" disabled>下一页</button>
+        </div>
+    </div>
+    
+    <!-- 订单号弹窗 -->
+    <div id="orderNumberModal" class="modal">
+        <div class="order-number-display" id="orderNumber"></div>
+    </div>
+    
+    <!-- 订单项模板 -->
+    <template id="order-template">
+        <div class="order-item">
+            <div class="order-poster">
+                <img src="" alt="">
+            </div>
+            <div class="order-content">
+                <div class="order-header">
+                    <h3>
+                        <span class="film-name"></span>
+                        <span class="order-status-hint"></span>
+                        <span class="order-countdown" style="display: none;"></span>
+                    </h3>
+                    <div class="order-actions">
+                        <button class="order-btn view-order-number">查看订单号</button>
+                        <div class="status-actions"></div>
+                    </div>
+                </div>
+                <div class="order-details">
+                    <div class="detail-row">
+                        <span class="label">影院：</span>
+                        <span class="value cinema-name"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">影厅：</span>
+                        <span class="value auditorium-name"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">座位：</span>
+                        <span class="value seat-info"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">语言：</span>
+                        <span class="value film-language"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">视觉效果：</span>
+                        <span class="value visual-effect"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">票价：</span>
+                        <span class="value fare"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">购票时间：</span>
+                        <span class="value create-time"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">观影时间：</span>
+                        <span class="value show-time"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="MyOrders.js"></script>
+</body>
+</html>

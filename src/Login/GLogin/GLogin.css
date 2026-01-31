@@ -1,0 +1,132 @@
+/* 登录页面样式 */
+body {
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    background: url('../../Images/BackGround.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    max-width: 450px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#loginForm {
+    max-width: 400px;
+    margin: 0 auto 30px;
+    padding: 20px;
+    background: #c0c0c0;
+    border: 2px outset #ffffff;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #393939;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 2px inset #ffffff;
+    background: #ffffff;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+    color: #000000;
+}
+
+.email-input-group {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.email-input-group input {
+    flex: 2;
+    border-right: none;
+}
+
+.email-input-group input:last-child {
+    flex: 1;
+    border-left: none;
+}
+
+.email-at {
+    padding: 8px 10px;
+    color: #000000;
+    font-size: 14px;
+    background: #ffffff;
+    border-top: 2px inset #ffffff;
+    border-bottom: 2px inset #ffffff;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    background: #0000cc;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+button:hover {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+button:active {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-group button {
+    flex: 1;
+    width: 50%;
+}
+
+.register-btn {
+    background: #c0c0c0;
+    color: #000000;
+}
+
+.register-btn:hover {
+    background: #c0c0c0;
+    border: 2px inset #ffffff;
+}
+
+.register-btn:active {
+    background: #c0c0c0;
+    border: 2px inset #ffffff;
+}

@@ -1,0 +1,361 @@
+/* 我的账户页面样式 */
+body {
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    background: url('../../Images/BackGround.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 700px;
+    margin: 20px auto;
+    background: #c0c0c0;
+    border: 2px outset #ffffff;
+    box-sizing: border-box;
+}
+
+.container > h1 {
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.container-header {
+    padding: 8px;
+    background: linear-gradient(135deg, #000080 0%, #0000ff 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 2px inset #ffffff;
+}
+
+.container-content {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    color: #000;
+    font-size: 18px;
+}
+
+.account-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 0;
+    align-items: flex-start;
+}
+
+.avatar-section {
+    flex: 0 0 200px;
+    padding: 15px;
+    background: #e0e0e0;
+    border: 2px inset #ffffff;
+    box-sizing: border-box;
+}
+
+.avatar-section form {
+    margin: 0;
+    width: 100%;
+}
+
+.avatar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.avatar-header h2 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.avatar-header .upload-btn {
+    margin: 0;
+}
+
+.user-info {
+    flex: 1;
+    padding: 15px;
+    background: #e0e0e0;
+    border: 2px inset #ffffff;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 14px;
+    margin-top: 0;
+    color: #000;
+    font-weight: bold;
+}
+
+.avatar-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 比例 */
+    background: #ffffff;
+    border: 2px inset #ffffff;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#avatar-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 5px;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+input[type="text"], input[type="password"], select, textarea {
+    width: 100%;
+    padding: 5px;
+    border: 2px inset #ffffff;
+    background: #ffffff;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.upload-btn, .update-btn, .recharge-btn, .change-password-btn {
+    background: #0000ff;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+    padding: 5px 15px;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.upload-btn:hover, .update-btn:hover, .recharge-btn:hover, .change-password-btn:hover {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+.upload-btn:active, .update-btn:active, .recharge-btn:active, .change-password-btn:active {
+    background: #000099;
+    border: 2px inset #ffffff;
+}
+
+.delete-account-btn {
+    background: #ff0000;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+    padding: 5px 15px;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.delete-account-btn:hover {
+    background: #cc0000;
+    border: 2px inset #ffffff;
+}
+
+.delete-account-btn:active {
+    background: #990000;
+    border: 2px inset #ffffff;
+}
+
+.reset-btn {
+    background: #c0c0c0;
+    color: #000;
+    border: 2px outset #ffffff;
+    padding: 5px 15px;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.reset-btn:hover {
+    background: #a0a0a0;
+    border: 2px inset #ffffff;
+}
+
+.reset-btn:active {
+    background: #808080;
+    border: 2px inset #ffffff;
+}
+
+/* 提交按钮样式 - 与更新按钮保持一致 */
+.submit-btn {
+    background: #0000ff;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+    padding: 5px 15px;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+.submit-btn:active {
+    background: #000099;
+    border: 2px inset #ffffff;
+}
+
+.change-password-form {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e0e0e0;
+    border: 1px inset #ffffff;
+}
+
+.hidden {
+    display: none;
+}
+
+.cancel-btn {
+    /* 取消按钮使用和重设按钮相同的样式 */
+    background: #c0c0c0;
+    color: #000;
+    border: 2px outset #ffffff;
+    padding: 5px 15px;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    background: #a0a0a0;
+    border: 2px inset #ffffff;
+}
+
+.cancel-btn:active {
+    background: #808080;
+    border: 2px inset #ffffff;
+}
+
+/* 账户容器样式 */
+.account-container {
+    padding: 20px;
+    background: #c0c0c0;
+    border: 2px outset #ffffff;
+}
+
+/* 个人信息区域样式 */
+.profile-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #c0c0c0;
+}
+
+.profile-info h2 {
+    font-size: 14px;
+    margin-top: 0;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.profile-info .info-item {
+    margin-bottom: 15px;
+}
+
+.account-info form {
+    margin: 0;
+    padding: 0;
+}
+
+.password-container {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e0e0e0;
+    border: 2px inset #ffffff;
+    box-sizing: border-box;
+}
+
+.password-section {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.password-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.password-section span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 2px inset #ffffff;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.change-password-section {
+    margin-top: 10px;
+    padding: 15px;
+    background: #ffffff;
+    border: 2px inset #ffffff;
+}
+
+.change-password-section .form-item {
+    margin-bottom: 15px;
+}
+
+.change-password-section .form-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.change-password-section .form-item input {
+    width: 100%;
+    padding: 5px;
+    border: 2px inset #ffffff;
+    background: #ffffff;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,105 @@
+/* 影院管理员登录页面样式 */
+body {
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    background: url('../../Images/BackGround.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.login-container {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    padding: 20px;
+    background: #c0c0c0;
+    border: 2px outset #ffffff;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #393939;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 2px inset #ffffff;
+    background: #ffffff;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+    color: #000000;
+}
+
+input[readonly] {
+    background: #e0e0e0;
+    color: #666;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    background: #0000cc;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+button:hover {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+button:active {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-group button {
+    flex: 1;
+    width: 50%;
+}
+
+.secondary-btn {
+    background: #c0c0c0;
+    color: #000000;
+}
+
+.secondary-btn:hover {
+    background: #c0c0c0;
+    border: 2px inset #ffffff;
+}
+
+.secondary-btn:active {
+    background: #c0c0c0;
+    border: 2px inset #ffffff;
+}

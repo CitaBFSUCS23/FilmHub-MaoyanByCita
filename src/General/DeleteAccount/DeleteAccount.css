@@ -1,0 +1,134 @@
+/* 注销账户页面样式 */
+body {
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    background: url('../../Images/BackGround.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 700px;
+    margin: 20px auto;
+    background: #c0c0c0;
+    border: 2px outset #ffffff;
+    box-sizing: border-box;
+}
+
+.container > h1 {
+    margin: 20px 0;
+    padding: 0 20px;
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+}
+
+.container-content {
+    padding: 20px;
+}
+
+.danger-text {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 16px !important;
+}
+
+.delete-form {
+    text-align: center;
+}
+
+.confirm-input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.confirm-input-group label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.confirm-input-group input {
+    padding: 8px 12px;
+    border: 2px inset #ffffff;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    width: 300px;
+    text-align: center;
+}
+
+.confirm-input-group input:focus {
+    outline: none;
+    border: 2px outset #0000ff;
+}
+
+.confirm-input-group .hint {
+    color: #666;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cancel-btn {
+    background: #c0c0c0;
+    color: #000;
+    border: 2px outset #ffffff;
+    padding: 8px 20px;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 100px;
+}
+
+.cancel-btn:hover {
+    background: #a0a0a0;
+    border: 2px inset #ffffff;
+}
+
+.cancel-btn:active {
+    background: #808080;
+    border: 2px inset #ffffff;
+}
+
+.delete-btn {
+    background: #ff0000;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+    padding: 8px 20px;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 100px;
+    font-weight: bold;
+}
+
+.delete-btn:hover {
+    background: #cc0000;
+    border: 2px inset #ffffff;
+}
+
+.delete-btn:active {
+    background: #990000;
+    border: 2px inset #ffffff;
+}
+
+.delete-btn:disabled {
+    background: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    border: 2px inset #ffffff;
+}
+
+.delete-btn:disabled:hover {
+    background: #cccccc;
+    border: 2px inset #ffffff;
+}

@@ -1,0 +1,225 @@
+/* 影院收入管理页面样式 */
+body {
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    background: url('../../Images/BackGround.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #c0c0c0;
+    border: 2px solid #000;
+}
+
+h1 {
+    text-align: center;
+    color: #000080;
+    margin-bottom: 30px;
+    font-size: 24px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+/* 日历头部导航样式 */
+.calendar-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.date-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 15px;
+    background: #4090a0;
+    border: 2px outset #ffffff;
+    font-size: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+}
+
+.nav-btn:hover {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+.nav-btn:active {
+    border-style: inset;
+    transform: translate(2px, 2px);
+}
+
+.date-navigation a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 15px;
+    background: #4090a0;
+    border: 2px outset #ffffff;
+    font-size: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.date-navigation a:hover {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+.date-navigation a:active {
+    border-style: inset;
+    transform: translate(2px, 2px);
+}
+
+.current-year, .current-month {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 20px;
+    background-color: #e0e0e0;
+    border: 2px solid #000;
+}
+
+/* 日历表格样式 */
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    overflow-x: auto;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #e0e0e0;
+    border: 2px solid #000;
+}
+
+.calendar th, .calendar td {
+    padding: 5px;
+    text-align: center;
+    border: 2px solid #000;
+    min-width: 60px;
+    height: 60px;
+    vertical-align: top;
+}
+
+.calendar th {
+    background-color: #c0c0c0;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.calendar td {
+    background-color: #ffffff;
+    position: relative;
+}
+
+.day-number {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    text-align: left;
+}
+
+.income {
+    font-size: 10px;
+    color: #006400;
+    font-weight: bold;
+    text-align: left;
+    background-color: #f0fff0;
+    padding: 2px;
+    border-radius: 3px;
+    border: 1px solid #006400;
+    margin-top: 3px;
+}
+
+/* 总计信息样式 */
+.total-income {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    border: 2px solid #000;
+    background-color: #e0e0e0;
+}
+
+.total-amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #006400;
+}
+
+/* 响应式设计 */
+@media (max-width: 960px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .calendar th, .calendar td {
+        padding: 8px;
+        min-width: 70px;
+        height: 80px;
+    }
+    
+    .day-number {
+        font-size: 16px;
+    }
+    
+    .income {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar th, .calendar td {
+        padding: 5px;
+        min-width: 60px;
+        height: 70px;
+    }
+    
+    .day-number {
+        font-size: 14px;
+    }
+    
+    .income {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .year-navigation, .month-navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .calendar th, .calendar td {
+        padding: 3px;
+        min-width: 40px;
+        height: 60px;
+    }
+    
+    .day-number {
+        font-size: 12px;
+    }
+    
+    .income {
+        font-size: 9px;
+        padding: 2px;
+    }
+}

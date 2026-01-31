@@ -1,0 +1,448 @@
+/* 我的发行影片页面样式 */
+body {
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    background: url('../../Images/BackGround.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #c0c0c0;
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #000080;
+    margin-top: 0;
+    font-size: 24px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+.no-films {
+    text-align: center;
+    padding: 50px;
+    font-size: 16px;
+    color: #666;
+}
+
+.film-list {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.film-item {
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    background: #e0e0e0;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+#new-film-form {
+    margin-bottom: 20px;
+}
+
+.release-film-container {
+    width: 100%;
+    background: #c0c0c0;
+    border: 2px outset #ffffff;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.release-film-header {
+    padding: 8px;
+    background: linear-gradient(135deg, #000080 0%, #0000ff 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 2px inset #ffffff;
+}
+
+.release-film-header i {
+    font-size: 20px;
+}
+
+.release-film-content {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #000000;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 6px;
+    background: #ffffff;
+    border: 2px inset #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+.date-row {
+    display: flex;
+    gap: 20px;
+}
+
+.date-column {
+    flex: 1;
+}
+
+.form-group input[type="text"]:disabled {
+    background: #c0c0c0;
+    color: #808080;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 6px;
+    background: #ffffff;
+    border: 2px inset #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    resize: vertical;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    background: #ffffff;
+    padding: 10px;
+    border: 2px inset #ffffff;
+}
+
+.language-group {
+    grid-template-columns: repeat(23, 1fr);
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: normal;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.btn-cancel, .btn-confirm {
+    padding: 6px 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    border: 2px outset #ffffff;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background: #c0c0c0;
+    color: #000000;
+}
+
+.btn-confirm {
+    background: #0000ff;
+    color: white;
+}
+
+.btn-cancel:active, .btn-confirm:active {
+    border: 2px inset #ffffff;
+}
+
+.btn-cancel:hover {
+    background: #d0d0d0;
+}
+
+.btn-confirm:hover {
+    background: #000080;
+}
+
+/* 左右布局 */
+.layout-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.layout-column.left-column {
+    flex: 66;
+}
+
+.layout-column.right-column {
+    flex: 34;
+}
+
+/* 海报容器 */
+.poster-container {
+    position: relative;
+    width: 100%;
+    padding-top: 177.78%; /* 9:16 比例 */
+    background-color: #f0f0f0;
+    border: 2px solid #000;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.poster-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    border: 2px solid #000;
+    box-sizing: border-box;
+}
+
+.poster-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.film-poster {
+    width: 120px;
+    height: 180px;
+    background: #fff;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.film-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 分页控件样式 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #000;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #000;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination input[type="number"] {
+    width: 50px;
+    padding: 4px;
+    border: 2px inset #ffffff;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+.pagination-controls button {
+    margin: 0 5px;
+}
+
+/* 新影片添加按钮样式 */
+.btn-add-film {
+    padding: 10px 20px;
+    background: #004d1c;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+}
+
+.btn-add-film:hover {
+    background: #0000ff;
+    border: 2px inset #ffffff;
+}
+
+/* 搜索栏样式 */
+.header-actions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.search-bar-container {
+    flex: 1;
+    position: relative;
+}
+
+.search-input {
+    padding: 8px;
+    border: 2px inset #ffffff;
+    width: 100%;
+    padding-right: 60px;
+    box-sizing: border-box;
+}
+
+.search-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 0 15px;
+    border-left: none;
+}
+
+/* 海报预览样式 */
+.poster-preview:hover {
+    background: #f0f0f0;
+}
+
+.film-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 225px; /* 与海报高度保持一致 */
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.film-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.detail-row-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.detail-row-row .detail-row {
+    flex: 1;
+    min-width: 180px;
+}
+
+.detail-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 6px 10px;
+    border-radius: 3px;
+    border-left: 3px solid #000080;
+}
+
+.label {
+    font-weight: bold;
+    color: #000080;
+    min-width: 90px;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.value {
+    color: #333;
+    flex: 1;
+    word-break: break-word;
+}
+
+.synopsis {
+    grid-column: 1 / -1;
+    line-height: 1.4;
+}
+
+.btn-page {
+    padding: 8px 15px;
+    background: #4090a0;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+    text-decoration: none;
+    font-size: 10px;
+    text-align: center;
+}
+
+.btn-page:hover {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+.btn-page.disabled {
+    background: #cccccc;
+    color: #666666;
+    border: 2px outset #ffffff;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.film-poster {
+    width: 150px;
+    height: 225px; /* 电影海报常见比例 */
+    background: #fff;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.film-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

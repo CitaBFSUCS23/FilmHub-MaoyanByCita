@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>影院管理员登录</title>
+    <link rel="stylesheet" href="MLogin.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+</head>
+<body>
+    <div class="login-container">
+        
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">用户邮箱</label>
+                <input type="email" id="email" name="email" readonly>
+            </div>
+            
+            <div class="input-group">
+                <label for="cinemaId">影院ID（2位省号+2位市号+4位影院编号）</label>
+                <input type="text" id="cinemaId" name="cinemaId" required 
+                       pattern="[0-9]{8}" 
+                       title="请输入2位省号+2位市号+4位影院编号"
+                       placeholder="请输入8位影院ID">
+            </div>
+            
+            <div class="button-group">
+                <button type="button" class="secondary-btn" onclick="location.href='../../Manager/OpenCinema/OpenCinema.html'">
+                    <i class="fas fa-store"></i>
+                    我要开店
+                </button>
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    进入管理
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="MLogin.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登记影院</title>
+    <link rel="stylesheet" href="OpenCinema.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+</head>
+<body>
+    <h1>登记影院</h1>
+    
+    <div class="register-container">
+        
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+        
+        <!-- 第一步：基本信息 -->
+        <div id="step1" class="step active">
+            <form id="cinemaForm">
+                <div class="form-group">
+                    <label for="cinemaName">影院名</label>
+                    <input type="text" id="cinemaName" name="cinemaName" class="form-input" required 
+                           placeholder="请输入影院名称">
+                </div>
+                
+                <div class="form-group">
+                    <label for="province">所在地</label>
+                    <div class="location-select">
+                        <select id="province" name="province" class="form-input" required>
+                            <option value="">请选择省份</option>
+                        </select>
+                        <select id="city" name="city" class="form-input" required>
+                            <option value="">请选择城市</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">详细地址</label>
+                    <textarea id="address" name="address" class="form-input" rows="4" required placeholder="请输入详细地址"></textarea>
+                </div>
+                
+                <div class="button-group">
+                    <button type="button" class="secondary-btn" onclick="location.href='../AboutManager/AboutManager.html'">
+                        <i class="fas fa-arrow-left"></i>
+                        返回
+                    </button>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-check"></i>
+                        提交登记
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- 第二步：登记成功 -->
+        <div id="step2" class="step">
+            <div class="success-message">
+                <h2><i class="fas fa-check-circle"></i> 影院登记成功！</h2>
+                <p>请以 <span id="cinemaId" class="cinema-id" onclick="copyCinemaId()"></span> 作为该影院的唯一标识符</p>
+                <p>点击影院ID可复制到剪贴板</p>
+                <p>您可以使用此ID登录影院管理系统</p>
+                
+                <div class="button-group">
+                    <button type="button" class="submit-btn" onclick="location.href='../../Login/MLogin/MLogin.html'">
+                        <i class="fas fa-sign-in-alt"></i>
+                        登录影院
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="OpenCinema.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+/* 登记影院页面样式 */
+body {
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    background: url('../../Images/BackGround.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.register-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #c0c0c0;
+    border: 2px outset #ffffff;
+    padding: 20px;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #393939;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select, textarea, .form-input {
+    width: 100%;
+    padding: 8px;
+    border: 2px inset #ffffff;
+    background: #ffffff;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+    color: #000000;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.location-select {
+    display: flex;
+    gap: 10px;
+}
+
+.location-select select {
+    flex: 1;
+}
+
+button {
+    padding: 8px 16px;
+    background: #0000cc;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+button:hover {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+button:active {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-group button {
+    flex: 1;
+}
+
+.button-group .secondary-btn {
+    background: #c0c0c0;
+    color: #000000;
+}
+
+.button-group .secondary-btn:hover {
+    background: #c0c0c0;
+    border: 2px inset #ffffff;
+}
+
+.submit-btn {
+    background: #008000;
+}
+
+.submit-btn:hover {
+    background: #008000;
+}
+
+.cinema-id {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #0000cc;
+    background: #ffffff;
+    padding: 5px 10px;
+    border: 1px solid #000000;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.cinema-id:hover {
+    background: #ffffcc;
+}
+
+.fa-check-circle {
+    color: #008000;
+    margin-right: 10px;
+}

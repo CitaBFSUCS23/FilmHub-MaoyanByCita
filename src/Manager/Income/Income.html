@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>影院收入管理</title>
+    <link rel="stylesheet" href="Income.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+</head>
+<body>
+
+    <div id="navigationBar"></div>
+    
+    <div class="container">
+        <h1>影院收入管理</h1>
+
+        <div class="calendar-header">
+            <div class="date-navigation">
+                <button id="prevYearBtn" class="nav-btn">上一年</button>
+                <input type="number" id="yearInput" min="2000" max="2100" step="1" class="current-year">
+                <button id="nextYearBtn" class="nav-btn">下一年</button>
+                
+                <button id="prevMonthBtn" class="nav-btn">上一月</button>
+                <input type="number" id="monthInput" min="1" max="12" step="1" class="current-month">
+                <button id="nextMonthBtn" class="nav-btn">下一月</button>
+            </div>
+        </div>
+        
+        <div class="calendar-container">
+            <table class="calendar">
+                <thead>
+                    <tr>
+                        <th>日</th>
+                        <th>一</th>
+                        <th>二</th>
+                        <th>三</th>
+                        <th>四</th>
+                        <th>五</th>
+                        <th>六</th>
+                    </tr>
+                </thead>
+                <tbody id="calendarBody">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="total-income">
+            <p>本月总收入: <span class="total-amount">+0.00元</span></p>
+        </div>
+    </div>
+
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="Income.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>影片排片</title>
+    <link rel="stylesheet" href="PlayMovies.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+</head>
+<body>
+    <div class="container">
+        <h1>影片排片</h1>
+        
+        <!-- 步骤1：选择影厅 -->
+        <div class="step-section">
+            <h2>1. 选择影厅</h2>
+            <div class="auditorium-grid" id="auditorium-grid">
+                <!-- 影厅列表将通过JavaScript动态生成 -->
+            </div>
+        </div>
+        
+        <!-- 步骤2：选择放映日期 -->
+        <div class="step-section" id="date-section" style="display: none;">
+            <h2>2. 选择放映日期</h2>
+            <div class="date-grid" id="date-grid">
+                <!-- 日期列表将通过JavaScript动态生成 -->
+            </div>
+        </div>
+        
+        <!-- 步骤3：选择影片 -->
+        <div class="step-section" id="film-section" style="display: none;">
+            <h2>3. 选择影片（只显示影厅视觉效果支持的影片）</h2>
+            <div class="film-grid" id="film-grid">
+                <!-- 影片列表将通过JavaScript动态生成 -->
+            </div>
+        </div>
+        
+        <!-- 步骤4：设置排片信息 -->
+        <div id="scheduleSection" class="step-section" style="display: none;">
+            <h2>4. 设置排片信息</h2>
+            <div id="scheduleForm" class="schedule-form">
+                <input type="hidden" id="selectedAuditorium" name="selectedAuditorium">
+                <input type="hidden" id="selectedDate" name="selectedDate">
+                <input type="hidden" id="selectedFilm" name="selectedFilm">
+                
+                <div class="form-container">
+                    <div class="form-group">
+                        <label>语言：</label>
+                        <select id="languageSelect" name="selectedLanguage" required>
+                            <option value="">请选择语言</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>视觉效果：</label>
+                        <select id="visualEffectSelect" name="visualEffect" required>
+                            <option value="">请选择视觉效果</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group price-group">
+                        <label>票价：</label>
+                        <input type="number" name="fare" step="1" pattern="^\d+(\.\d{1,2})?$" placeholder="请先选择影片" required>
+                    </div>
+                    
+                    <div class="form-group time-group">
+                        <label>开始时间：</label>
+                        <input type="time" id="startTime" name="startTime" onchange="calculateEndTime()" required>
+                    </div>
+                    
+                    <div class="form-group time-group">
+                        <label>结束时间：</label>
+                        <input type="time" id="endTime" name="endTime" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="button-group">
+                <button type="button" class="btn-cancel" onclick="resetPage()">重做</button>
+                <button type="button" class="btn-submit" onclick="submitSchedule()">提交</button>
+            </div>
+        </div>
+        
+        <!-- 消息提示区域 -->
+        <div id="message" style="display: none;"></div>
+    </div>
+    
+    <!-- 影厅模板 -->
+    <template id="auditorium-template">
+        <div class="auditorium-item" onclick="selectAuditorium('{{auditoriumId}}')">
+            <div class="auditorium-id">{{auditoriumId}}</div>
+            <div class="auditorium-name">{{auditoriumName}}</div>
+        </div>
+    </template>
+    
+    <!-- 日期模板 -->
+    <template id="date-template">
+        <div class="date-item" onclick="selectDate('{{date}}')">
+            <div class="date-day">{{day}}日</div>
+            <div class="date-weekday">{{weekday}}</div>
+            <div class="date-month">{{month}}月</div>
+        </div>
+    </template>
+    
+    <!-- 影片模板 -->
+    <template id="film-template">
+        <div class="film-item" onclick="selectFilm('{{filmKey}}')">
+            <div class="film-title">{{filmName}}</div>
+            <div class="film-id">{{formattedFullId}}</div>
+            <div class="publisher-name">{{publisherName}}</div>
+            <input type="hidden" id="filmData_{{filmKey}}" value='{{filmData}}'>
+        </div>
+    </template>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="PlayMovies.js"></script>
+</body>
+</html>

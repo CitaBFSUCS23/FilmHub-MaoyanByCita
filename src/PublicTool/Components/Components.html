@@ -1,0 +1,143 @@
+<!-- 气泡栏 -->
+<div class='bubbles-container'>
+    <button class='bubble-btn bubble-home' onclick='window.location.href = "../../General/FilmScan/FilmScan.html"' title='回到首页'>
+        <i class='fas fa-home'></i>
+    </button>
+    
+    <div class='bubble-switch-wrapper'>
+        <button class='bubble-btn bubble-switch' title='切换身份'>
+            <i class='fas fa-exchange-alt'></i>
+        </button>
+        
+        <!-- 身份切换泡泡容器 -->
+        <div class='role-switch-container' id='roleSwitchContainer'>
+            <!-- 普通用户角色按钮 -->
+            <button class='role-switch-btn' onclick='window.location.href = "../../Login/GLogin/GLogin.html"' title='普通用户'>
+                <i class='fas fa-user'></i>
+            </button>
+            
+            <!-- 影院管理员角色按钮 -->
+            <button class='role-switch-btn' onclick='window.location.href = "../../Login/MLogin/MLogin.html"' title='影院管理员'>
+                <i class='fas fa-user-shield'></i>
+            </button>
+            
+            <!-- 发行商角色按钮 -->
+            <button class='role-switch-btn' onclick='window.location.href = "../../Login/PLogin/PLogin.html"' title='发行商'>
+                <i class='fas fa-building'></i>
+            </button>
+        </div>
+    </div>
+    
+    <button class='bubble-btn bubble-top' onclick='window.scrollTo({top: 0})' title='返回顶部'>
+        <i class='fas fa-arrow-up'></i>
+    </button>
+
+    <button class='bubble-btn bubble-refresh' onclick='window.location.reload()' title='刷新页面'>
+        <i class='fas fa-sync-alt'></i>
+    </button>
+    
+    <button class='bubble-btn bubble-back' onclick='window.history.back()' title='返回上一页'>
+        <i class='fas fa-arrow-left'></i>
+    </button>
+</div>
+
+<!-- 导航板 -->
+<div class='navigation-board-container' id='navigationBoard'>
+    <div class='navigation-board-header'>
+        <i class='fas fa-compass'></i>
+        <span>导航板</span>
+    </div>
+    <div class='navigation-board-content' id='navigationContent'>
+        <!-- 导航内容将通过JavaScript动态加载 -->
+        
+        <!-- 游客身份卡片 -->
+        <div class='role-card guest-card' style='display: none;'>
+            <div class='role-card-header'>
+                <i class='fas fa-user-lock'></i>
+                <span>游客</span>
+            </div>
+            <div class='role-card-content'>
+                <div class='task-item'>
+                    <i class='fas fa-sign-in-alt'></i>
+                    <a href='../../Login/GLogin/GLogin.html'>请先登录</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 普通用户身份卡片 -->
+        <div class='role-card general-card' style='display: none;'>
+            <div class='role-card-header'>
+                <i class='fas fa-user'></i>
+                <span>普通用户</span>
+            </div>
+            <div class='role-card-content'>
+                <div class='task-item'>
+                    <i class='fas fa-film'></i>
+                    <a href='../../General/FilmScan/FilmScan.html?status=HotFilming'>FilmScan</a>
+                </div>
+                <div class='task-item'>
+                    <i class='fas fa-shopping-cart'></i>
+                    <a href='../../General/MyOrders/MyOrders.html'>MyOrders</a>
+                </div>
+                <div class='task-item'>
+                    <i class='fas fa-user'></i>
+                    <a href='../../General/AboutAccount/AboutAccount.html'>AboutAccount</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 影院管理员身份卡片 -->
+        <div class='role-card manager-card' style='display: none;'>
+            <div class='role-card-header'>
+                <i class='fas fa-user-shield'></i>
+                <span>影院管理员</span>
+            </div>
+            <div class='role-card-content'>
+                <div class='task-item'>
+                    <i class='fas fa-theater-masks'></i>
+                    <a href='../../Manager/Auditoriums/Auditoriums.html'>Auditoriums</a>
+                </div>
+                <div class='task-item'>
+                    <i class='fas fa-building'></i>
+                    <a href='../../Manager/Checkin/Checkin.html'>Checkin</a>
+                </div>
+                <div class='task-item'>
+                    <i class='fas fa-home'></i>
+                    <a href='../../Manager/AboutCinema/AboutCinema.html'>AboutCinema</a>
+                </div>
+                <div class='task-item'>
+                    <i class='fas fa-calendar-plus'></i>
+                    <a href='../../Manager/PlayMovies/PlayMovies.html'>PlayMovies</a>
+                </div>
+                <div class='task-item'>
+                    <i class='fas fa-history'></i>
+                    <a href='../../Manager/Income/Income.html'>Income</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 发行商身份卡片 -->
+        <div class='role-card publisher-card' style='display: none;'>
+            <div class='role-card-header'>
+                <i class='fas fa-building'></i>
+                <span>发行商</span>
+            </div>
+            <div class='role-card-content'>
+                <div class='task-item'>
+                    <i class='fas fa-film'></i>
+                    <a href='../../Publisher/MyRelease/MyRelease.html'>MyRelease</a>
+                </div>
+                <div class='task-item'>
+                    <i class='fas fa-pencil-alt'></i>
+                    <a href='../../Publisher/AboutPublisher/AboutPublisher.html'>AboutPublisher</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 登出选项 -->
+        <div class='task-item logout-item'>
+            <i class='fas fa-sign-out-alt'></i>
+            <a href='#' id='logoutLink' onclick='handleLogout()'>Logout</a>
+        </div>
+    </div>
+</div>

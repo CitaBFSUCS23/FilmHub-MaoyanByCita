@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>选择座位</title>
+    <link rel="stylesheet" href="Confirm.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="film-info">
+                <div class="film-name" id="film-name"></div>
+                <div class="cinema-name" id="cinema-name"></div>
+            </div>
+        </div>
+
+        <div class="seat-layout">
+            <div class="screen-indicator">↓ 屏幕在此 ↓</div>
+            <div class="seat-layout-container">
+                <table class="seat-layout-table" id="seatGrid">
+                    <thead id="seat-header">
+                        <tr>
+                            <th class="corner-header"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="seat-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-card">
+        <div class="selected-seats" id="selectedSeats">
+        </div>
+        <div class="total-info">
+            <div class="total-amount">共计票价: <span id="totalAmount">¥0</span></div>
+            <button class="buy-btn" id="buyBtn" disabled>立即购票</button>
+        </div>
+    </div>
+
+    <form id="orderForm" method="post" action="../Confirm?action=submitOrder" style="display: none;">
+        <input type="hidden" name="publisherId" id="publisherId">
+        <input type="hidden" name="filmId" id="filmId">
+        <input type="hidden" name="filmLanguage" id="filmLanguage">
+        <input type="hidden" name="visualEffect" id="visualEffect">
+        <input type="hidden" name="cinemaProvinceCode" id="cinemaProvinceCode">
+        <input type="hidden" name="cinemaCityCode" id="cinemaCityCode">
+        <input type="hidden" name="cinemaId" id="cinemaId">
+        <input type="hidden" name="auditoriumId" id="auditoriumId">
+        <input type="hidden" name="scheduleId" id="scheduleId">
+        <input type="hidden" name="selectedSeats" id="selectedSeatsInput">
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="Confirm.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注销账户 - FilmHub</title>
+    <link rel="stylesheet" href="DeleteAccount.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+</head>
+<body>
+    <!-- 导航栏组件 -->
+    <div id="navigationBar"></div>
+    
+    <div class="container">
+        <h1>注销账户</h1>
+        <div class="account-container">
+            <div class="container-content">
+                <div class="warning-message">
+                    <p>您已注册 <strong id="daysRegistered">1</strong> 天，确认注销账号吗？</p>
+                    <p class="danger-text">注意：未完成的订单、钱包里的余额无法退回</p>
+                </div>
+                
+                <form id="deleteForm" class="delete-form">
+                    <div class="confirm-input-group">
+                        <label for="confirmText">在此输入“我已了解风险，确认注销”</label>
+                        <input type="text" id="confirmText" name="confirmText" pattern="我已了解风险，确认注销" title="请输入确认信息" required>
+                        <div class="hint">全字匹配以继续</div>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="button" class="cancel-btn" id="cancelBtn">取消</button>
+                        <button type="submit" class="delete-btn" id="deleteBtn" disabled>确认删除</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="DeleteAccount.js"></script>
+</body>
+</html>

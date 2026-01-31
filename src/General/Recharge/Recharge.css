@@ -1,0 +1,130 @@
+/* 账户充值页面样式 */
+body {
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    background: url('../../Images/BackGround.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 700px;
+    margin: 20px auto;
+    background: #c0c0c0;
+    border: 2px outset #ffffff;
+    box-sizing: border-box;
+}
+
+.container > h1 {
+    margin: 20px 0;
+    padding: 0 20px;
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+}
+
+.container-content {
+    padding: 20px;
+}
+
+.balance-info {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #e0e0e0;
+    border: 1px inset #ffffff;
+}
+
+.balance-info p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.recharge-form {
+    text-align: center;
+}
+
+.form-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-item label {
+    font-weight: bold;
+    min-width: 80px;
+    text-align: right;
+}
+
+.form-item input {
+    padding: 5px 10px;
+    border: 2px inset #ffffff;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    width: 200px;
+    text-align: center;
+}
+
+.form-item input:focus {
+    outline: none;
+    border: 2px outset #0000ff;
+}
+
+.hint {
+    color: #666;
+    font-size: 12px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cancel-btn {
+    background: #c0c0c0;
+    color: #000;
+    border: 2px outset #ffffff;
+    padding: 8px 20px;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 100px;
+}
+
+.cancel-btn:hover {
+    background: #a0a0a0;
+    border: 2px inset #ffffff;
+}
+
+.cancel-btn:active {
+    background: #808080;
+    border: 2px inset #ffffff;
+}
+
+.submit-btn {
+    background: #008000;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+    padding: 8px 20px;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 100px;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background: #006600;
+    border: 2px inset #ffffff;
+}
+
+.submit-btn:active {
+    background: #004400;
+    border: 2px inset #ffffff;
+}

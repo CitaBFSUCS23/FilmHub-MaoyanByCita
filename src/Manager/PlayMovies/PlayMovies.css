@@ -1,0 +1,320 @@
+/* 影片排片页面样式 */
+body {
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    background: url('../../Images/BackGround.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* 容器样式 */
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #c0c0c0;
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #000080;
+    margin-top: 0;
+    font-size: 24px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #000080;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+
+/* 步骤区域样式 */
+.step-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #e0e0e0;
+    border: 2px solid #000;
+}
+
+/* 通用网格样式 */
+.auditorium-grid, .film-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* 通用项目样式 */
+.auditorium-item, .film-item {
+    background: #d4d0c8;
+    border: 2px outset #ffffff;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.auditorium-item:hover, .film-item:hover {
+    background: #c0c0c0;
+    border: 2px inset #ffffff;
+}
+
+.auditorium-item.selected, .film-item.selected {
+    background: #004d1c;
+    color: #ffffff;
+    border: 2px inset #ffffff;
+}
+
+/* 影厅特定样式 */
+.auditorium-id, .film-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.auditorium-name {
+    font-size: 12px;
+    color: #666;
+}
+
+.auditorium-item.selected .auditorium-name {
+    color: #cccccc;
+}
+
+/* 日期选择样式 */
+.date-selection {
+    margin-top: 10px;
+}
+
+.date-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.date-item {
+    background: #d4d0c8;
+    border: 2px outset #ffffff;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.date-item:hover {
+    background: #c0c0c0;
+    border: 2px inset #ffffff;
+}
+
+.date-item.selected {
+    background: #004d1c;
+    color: #ffffff;
+    border: 2px inset #ffffff;
+}
+
+.date-day {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.date-weekday {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.date-month {
+    font-size: 12px;
+    color: #666;
+}
+
+.date-item.selected .date-month {
+    color: #cccccc;
+}
+
+/* 影片列表样式已移至.film-grid */
+.film-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.film-item.selected .film-title {
+    color: #ffffff;
+}
+
+.film-id {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.film-item.selected .film-id {
+    color: #cccccc;
+}
+
+.publisher-name {
+    font-size: 10px;
+    color: #666;
+    font-style: italic;
+}
+
+.film-item.selected .publisher-name {
+    color: #cccccc;
+}
+
+/* 禁用的影片项样式 */
+.film-item.disabled {
+    background: #c0c0c0;
+    color: #808080;
+    border: 2px inset #ffffff;
+    cursor: not-allowed;
+}
+
+.film-item.disabled .film-title,
+.film-item.disabled .film-id,
+.film-item.disabled .publisher-name {
+    color: #808080;
+}
+
+/* 影片警告信息样式 */
+.film-warning {
+    font-size: 12px;
+    color: #ff0000;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* 表单样式 */
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    flex: 1 1 calc(50% - 15px);
+    min-width: 200px;
+}
+
+/* 票价、开始时间和结束时间的特殊布局 */
+.form-group.price-group {
+    flex: 1 1 calc(25% - 15px);
+}
+
+.form-group.time-group {
+    flex: 1 1 calc(25% - 15px);
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.form-group select, .form-group input {
+    padding: 8px 12px;
+    background: #ffffff;
+    border: 2px inset #ffffff;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.time-inputs {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.time-inputs input {
+    width: 60px;
+    text-align: center;
+}
+
+.end-time {
+    font-size: 14px;
+    color: #666;
+    margin-left: 10px;
+}
+
+/* 按钮组样式 */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-group button {
+    flex: 1;
+    width: 50%;
+    padding: 8px;
+    border: 2px outset #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+/* 提交按钮样式 */
+.btn-submit {
+    background: #0000cc;
+    color: #ffffff;
+}
+
+.btn-submit:hover,
+.btn-submit:active {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+.btn-submit:disabled {
+    background: #808080;
+    color: #c0c0c0;
+    cursor: not-allowed;
+    border: 2px outset #c0c0c0;
+}
+
+/* 重做按钮样式 */
+.btn-cancel {
+    background: #c0c0c0;
+    color: #000000;
+}
+
+.btn-cancel:hover,
+.btn-cancel:active {
+    background: #c0c0c0;
+    border: 2px inset #ffffff;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .auditorium-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+    
+    .time-inputs {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .time-inputs input {
+        width: 100px;
+    }
+}

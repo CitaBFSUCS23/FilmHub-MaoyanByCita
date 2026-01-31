@@ -1,0 +1,103 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>影院信息</title>
+    <link rel="stylesheet" href="AboutCinema.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container-header">影院信息管理</div>
+        
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+        
+        <div class="section">
+            <form id="cinemaForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>省代码:</label>
+                        <input type="text" id="cinemaProvinceCode" disabled class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>市代码:</label>
+                        <input type="text" id="cinemaCityCode" disabled class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>影院ID:</label>
+                        <input type="text" id="cinemaId" disabled class="form-input">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cinemaName">影院名称:</label>
+                    <input type="text" id="cinemaName" name="cinemaName" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cinemaAddress">详细地址:</label>
+                    <textarea id="cinemaAddress" name="cinemaAddress" rows="3" class="form-input" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cinemaImage">影院图片:</label>
+                    <div class="image-container">
+                        <img src="" alt="影院图片" class="cinema-image" id="cinema-image-preview">
+                    </div>
+                    <input type="file" id="cinemaImage" name="cinemaImage" accept="image/jpeg" class="form-input">
+                    <p>仅支持JPG格式</p>
+                </div>
+                
+                <div class="button-group">
+                    <button type="button" class="secondary-btn" onclick="location.href='../../Login/MLogin/MLogin.html'">
+                        <i class="fas fa-arrow-left"></i>
+                        管理其他影院
+                    </button>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-save"></i>
+                        保存修改
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+
+        <div class="section" id="managerSection" style="display: none;">
+            <h2>管理人员信息</h2>
+            
+            <table id="managerTable">
+                <thead>
+                    <tr>
+                        <th>邮箱</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="managerList">
+
+                </tbody>
+            </table>
+            
+            <div class="add-manage">
+                <h3>添加管理员</h3>
+                <form id="addManagerForm">
+                    <label for="email-local">目标用户邮箱:</label>
+                    <div class="email-input-group">
+                        <input type="text" id="email-local" name="email-local" required placeholder="example" class="form-input">
+                        <span class="email-at">@</span>
+                        <input type="text" id="email-domain" name="email-domain" required placeholder="domain.com" class="form-input">
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-user-plus"></i>
+                        添加
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="AboutCinema.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>电影购票</title>
+    <link rel="stylesheet" href="BuyTicket.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+</head>
+<body>
+    <div class="container">
+        <h1>选择场次购票</h1>
+        
+        <!-- 电影信息行 -->
+        <div class="film-item">
+            <!-- 电影海报 -->
+            <div class="film-poster">
+                <img id="film-poster" src="" alt="">
+            </div>
+            
+            <!-- 电影内容容器 -->
+            <div class="film-content-container">
+                <!-- 电影信息 -->
+                <div class="film-info">
+                    <div class="film-details">
+                        <div class="detail-row-row">
+                            <div class="detail-row">
+                                <span class="label">电影片名:</span>
+                                <span class="value" id="film-name"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">上映日期:</span>
+                                <span class="value" id="film-release-date"></span>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">影片类型:</span>
+                            <span class="value" id="film-types"></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">支持语言:</span>
+                            <span class="value" id="film-languages"></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">视觉效果:</span>
+                            <span class="value" id="film-visual-effects"></span>
+                        </div>
+                        <div class="detail-row-row">
+                            <div class="detail-row">
+                                <span class="label">影片时长:</span>
+                                <span class="value" id="film-duration"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">累计票房:</span>
+                                <span class="value" id="film-box-office"></span>
+                            </div>
+                        </div>
+                        <div class="detail-row synopsis">
+                            <span class="label">影片简介:</span>
+                            <span class="value" id="film-synopsis"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-conditions">
+            <div class="condition-group">
+                <label for="provinceSelect">省份:
+                <select id="provinceSelect" name="province"></select>
+                </label>
+            </div>
+            
+            <div class="condition-group">
+                <label for="citySelect">城市:
+                <select id="citySelect" name="city"></select>
+                </label>
+            </div>
+            
+            <div class="condition-group">
+                <label for="dateSelect">日期:
+                <input type="date" id="dateSelect" name="date">
+                </label>
+            </div>
+            
+            <div class="condition-group">
+                <button id="searchBtn" class="btn-add-film">查询场次</button>
+            </div>
+        </div>
+        
+        <div id="cinemaScheduleList" class="cinema-list">
+
+        </div>
+
+        <template id="schedule-template">
+            <div class="schedule-block">
+                <div class="cinema-name"></div>
+                <div class="language"></div>
+                <div class="show-time"></div>
+                <div class="visual-effects"></div>
+                <div class="fare"></div>
+            </div>
+            <form method="get" action="/General/Confirm/Confirm.html" style="display: none;">
+                <input type="hidden" name="publisherId">
+                <input type="hidden" name="filmId">
+                <input type="hidden" name="filmLanguage">
+                <input type="hidden" name="visualEffect">
+                <input type="hidden" name="cinemaProvinceCode">
+                <input type="hidden" name="cinemaCityCode">
+                <input type="hidden" name="cinemaId">
+                <input type="hidden" name="auditoriumId">
+                <input type="hidden" name="scheduleId">
+            </form>
+        </template>
+
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="BuyTicket.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+/* 发行商管理页面样式 */
+body {
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    background: url('../../Images/BackGround.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #c0c0c0;
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #000080;
+    margin-top: 0;
+    font-size: 24px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="password"], select {
+    width: 100%;
+    padding: 5px;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+    border: 2px solid #000;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+input[disabled] {
+    background: #d0d0d0;
+    color: #808080;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    background: #0000cc;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+button:hover {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+button:active {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-group button {
+    flex: 1;
+    width: 50%;
+}
+
+.btn-primary {
+    background: #0000ff;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+.btn-primary:active {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+.btn-secondary {
+    background: #c0c0c0;
+    color: #000000;
+}
+
+.btn-secondary:hover {
+    background: #c0c0c0;
+    border: 2px inset #ffffff;
+}
+
+.btn-secondary:active {
+    background: #c0c0c0;
+    border: 2px inset #ffffff;
+}
+
+#passwordFields {
+    margin-top: 10px;
+    padding: 10px;
+    background: #e0e0e0;
+    border: 1px solid #000;
+}
+

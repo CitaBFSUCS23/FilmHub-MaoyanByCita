@@ -1,0 +1,53 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>发行商登录</title>
+    <link rel="stylesheet" href="PLogin.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+</head>
+<body>
+    <div class="login-container">
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">用户邮箱</label>
+                <input type="email" id="email" name="email" readonly disabled>
+            </div>
+            
+            <div class="input-group">
+                <label for="publisherId">发行商唯一标识符</label>
+                <input type="text" id="publisherId" name="publisherId" required 
+                       pattern="[0-9]{6}" 
+                       title="请输入6位数字的发行商标识符"
+                       placeholder="平台向您提供的6位发行商唯一标识符">
+            </div>
+            
+            <div class="input-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" name="password" required 
+                       pattern=".{6,}" 
+                       title="请输入6位以上密码"
+                       placeholder="请输入密码">
+            </div>
+            
+            <div class="button-group">
+                <button type="button" class="secondary-btn" onclick="location.href='../../Publisher/BePublisher/BePublisher.html'">
+                    <i class="fas fa-store"></i>
+                    成为发行商
+                </button>
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    进入管理
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="PLogin.js"></script>
+</body>
+</html>

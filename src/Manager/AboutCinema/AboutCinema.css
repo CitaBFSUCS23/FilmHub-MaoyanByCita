@@ -1,0 +1,264 @@
+/* 影院信息管理页面样式 */
+body {
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    background: url('../../Images/BackGround.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #c0c0c0;
+    border: 2px outset #ffffff;
+    padding: 20px;
+}
+
+.container-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #0000cc;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+}
+
+.section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #ffffff;
+    border: 2px inset #ffffff;
+}
+
+.section h2 {
+    color: #0000cc;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid #c0c0c0;
+    padding-bottom: 5px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.form-row .form-group {
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #393939;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select, textarea, .form-input {
+    width: 100%;
+    padding: 6px;
+    border: 2px inset #ffffff;
+    background: #ffffff;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+    color: #000000;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+input:disabled {
+    background: #e0e0e0;
+    color: #666666;
+}
+
+.image-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.cinema-image {
+    max-width: 300px;
+    max-height: 200px;
+    border: 2px inset #ffffff;
+    background: #ffffff;
+    padding: 5px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-group button {
+    flex: 1;
+}
+
+button {
+    padding: 8px 16px;
+    background: #0000cc;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+button:hover {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+button:active {
+    background: #0000cc;
+    border: 2px inset #ffffff;
+}
+
+.secondary-btn {
+    background: #c0c0c0;
+    color: #000000;
+}
+
+.secondary-btn:hover {
+    background: #c0c0c0;
+    border: 2px inset #ffffff;
+}
+
+.submit-btn {
+    background: #008000;
+}
+
+.submit-btn:hover {
+    background: #008000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: #ffffff;
+    border: 2px inset #ffffff;
+}
+
+table th {
+    background: #0000cc;
+    color: #ffffff;
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #ffffff;
+}
+
+table td {
+    padding: 8px;
+    border: 1px solid #c0c0c0;
+    vertical-align: middle;
+}
+
+table tr:nth-child(even) {
+    background: #f0f0f0;
+}
+
+.add-manage {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e8e8e8;
+    border: 2px inset #ffffff;
+}
+
+.add-manage h3 {
+    margin-bottom: 10px;
+    color: #0000cc;
+    font-size: 16px;
+}
+
+.add-manage form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.add-manage input {
+    flex: 1;
+}
+
+.add-manage button {
+    width: auto;
+    padding: 6px 12px;
+}
+
+/* 邮箱输入框样式 */
+.email-input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.email-input-group input {
+    flex: 1;
+    margin: 0 2px;
+}
+
+.email-at {
+    margin: 0 5px;
+    color: #393939;
+    font-weight: bold;
+}
+
+.delete-btn {
+    background: #cc0000;
+    color: #ffffff;
+    border: 2px outset #ffffff;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #cc0000;
+    border: 2px inset #ffffff;
+}
+
+.delete-btn:disabled {
+    background: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.fa-save, .fa-user-plus {
+    margin-right: 5px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .add-manage form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .add-manage button {
+        width: 100%;
+    }
+}

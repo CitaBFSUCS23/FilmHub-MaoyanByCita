@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>普通用户登录</title>
+    <link rel="stylesheet" href="GLogin.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+</head>
+<body>
+    <div class="login-container">
+
+        <h1>账号登录</h1>
+        
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email-local">邮箱:</label>
+                <div class="email-input-group">
+                    <input type="text" id="email-local" name="email-local" required placeholder="example">
+                    <span class="email-at">@</span>
+                    <input type="text" id="email-domain" name="email-domain" required placeholder="domain.com">
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">密码:</label>
+                <input type="password" id="password" name="password" minlength="6" maxlength="16" pattern=".{6,16}" required placeholder="密码6-16位字符">
+            </div>
+            
+            <div class="button-group">
+                <button type="button" class="register-btn" onclick="location.href='../../General/Register/Register.html'">注册</button>
+                <button type="submit" class="login-btn">登录</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="GLogin.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>发行商信息</title>
+    <link rel="stylesheet" href="AboutPublisher.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+</head>
+<body>
+    <div class="container">
+        <h1>我的发行商信息</h1>
+        
+        <form id="publisherForm" method="post" action="/AboutPublisher">
+            <div class="form-group">
+                <label for="publisherId">发行商ID:</label>
+                <input type="text" id="publisherId" name="publisherId" disabled>
+            </div>
+            
+            <div class="form-group">
+                <label for="publisherPassword">密码:</label>
+                <input type="text" id="publisherPassword" name="publisherPassword" value="******" disabled>
+            </div>
+            
+            <!-- 隐藏字段，用于存储原始发行商信息 -->
+            <input type="hidden" id="originalPublisherName" name="originalPublisherName">
+            <input type="hidden" id="originalPublisherNationality" name="originalPublisherNationality">
+            
+            <div id="passwordFields" style="display: none;">
+                <div class="form-group">
+                    <label for="newPassword">新密码:</label>
+                    <input type="password" id="newPassword" name="newPassword" pattern="^[a-zA-Z0-9]{6,20}$">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">确认密码:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" pattern="^[a-zA-Z0-9]{6,20}$">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="publisherName">发行商名称:</label>
+                <input type="text" id="publisherName" name="publisherName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="publisherNationality">国籍:</label>
+                <select id="publisherNationality" name="publisherNationality" required>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button type="button" id="changePasswordBtn" class="btn-secondary">修改密码</button>
+                <button type="submit" class="btn-primary">保存修改</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="AboutPublisher.js"></script>
+</body>
+</html>

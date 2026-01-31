@@ -1,0 +1,80 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>电影浏览</title>
+    <link rel="stylesheet" href="FilmScan.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+</head>
+<body>
+    <div class="container">
+        <h1>电影浏览</h1>
+        
+        <div class="header-actions">
+            <div class="status-filters">
+                <button id="filter-all" class="filter-btn active" onclick="filterByStatus(null)">全部</button>
+                <button id="filter-hot" class="filter-btn" onclick="filterByStatus('HotFilming')">在映</button>
+                <button id="filter-upcoming" class="filter-btn" onclick="filterByStatus('UpComing')">预热</button>
+                <button id="filter-finished" class="filter-btn" onclick="filterByStatus('HasFinished')">历史</button>
+            </div>
+
+            <div class="search-bar-container">
+                <form id="search-form" class="search-form">
+                    <input type="text" id="searchInput" placeholder="此处搜索片名。在映影片单击海报购票" class="search-input">
+                    <button type="submit" class="btn-add-film search-button">搜索</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="film-list" id="film-list">
+        </div>
+        
+        <template id="film-item-template">
+            <div class="film-item">
+                <div class="film-poster clickable">
+                    <img src="" alt="">
+                </div>
+                <div class="film-content-container">
+                    <div class="film-info">
+                        <div class="film-details">
+                            <div class="detail-row">
+                                <span class="label">电影片名:</span>
+                                <span class="value film-name"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">影片时长:</span>
+                                <span class="value film-duration"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">累计票房:</span>
+                                <span class="value film-box-office"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">影片类型:</span>
+                                <span class="value film-types"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">上映状态:</span>
+                                <span class="value film-status"></span>
+                            </div>
+                            <div class="detail-row synopsis">
+                                <span class="label">影片简介:</span>
+                                <span class="value film-synopsis"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        
+        <div id="pagination" style="text-align: center; margin-top: 20px;">
+
+        </div>
+    </div>
+    
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="FilmScan.js"></script>
+</body>
+</html>

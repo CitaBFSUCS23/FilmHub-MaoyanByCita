@@ -1,0 +1,141 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>影院影厅管理</title>
+    <link rel="stylesheet" href="Auditoriums.css">
+    <link rel="stylesheet" href="/PublicTool/ShowMessage/ShowMessage.css">
+    <link rel="stylesheet" href="/PublicTool/Components/Components.css">
+    <link rel="stylesheet" href="/Publisher/MyRelease/MyRelease.css">
+</head>
+<body>
+    <!-- 导航栏组件 -->
+    <div id="navigationBar"></div>
+    
+    <div class="container">
+        <h1>影院影厅管理</h1>
+    
+        <!-- 顶部操作栏 -->
+        <div class="header-actions">
+            <!-- 第一组：添加影院按钮 -->
+            <div class="action-group">
+                <button class="btn-add-film" onclick="addNewAuditorium()">添加新影厅</button>
+            </div>
+            
+            <!-- 第二组：排序字段 -->
+            <div class="action-group">
+                <button class="sort-field-btn active" data-field="auditoriumId" onclick="setSortField(this)">按序号</button>
+                <button class="sort-field-btn" data-field="auditoriumName" onclick="setSortField(this)">按名称</button>
+                <button class="sort-field-btn" data-field="capacity" onclick="setSortField(this)">按容量</button>
+                <button class="sort-field-btn" data-field="nextShowTime" onclick="setSortField(this)">按临近场次</button>
+            </div>
+            
+            <!-- 第三组：排序规则 -->
+            <div class="action-group">
+                <button class="sort-order-btn active" data-order="asc" onclick="setSortOrder(this)">升序</button>
+                <button class="sort-order-btn" data-order="desc" onclick="setSortOrder(this)">降序</button>
+            </div>
+        </div>
+        
+        <div class="auditorium-list">
+            <!-- 新影厅表单模板，默认隐藏 -->
+            <div id="new-auditorium-form" style="display: none;">
+            <div class="release-film-container">
+                <div class="release-film-header">
+                    <i class="fas fa-film"></i>
+                    <span>添加新影厅</span>
+                </div>
+                <div class="release-film-content">
+                    <!-- 进度条 -->
+                    <div class="progress-bar">
+                        <div class="progress-step active" id="step1" onclick="goToStep(1)">
+                            <div class="step-number">1</div>
+                            <div class="step-text">基本信息</div>
+                        </div>
+                        <div class="progress-arrow"></div>
+                        <div class="progress-step" id="step2" onclick="goToStep(2)">
+                            <div class="step-number">2</div>
+                            <div class="step-text">禁用座位</div>
+                        </div>
+                    </div>
+                    
+                    <form id="auditorium-form" onsubmit="submitAuditorium(event)">
+                        <input type="hidden" name="auditoriumId" id="auditoriumId">
+                        <input type="hidden" id="auditoriumLayout" name="auditoriumLayout">
+                        <input type="hidden" id="selectedVisualEffects" name="selectedVisualEffects">
+                        
+                        <div class="form-group">
+                            <label>影厅号:</label>
+                            <input type="text" id="fullAuditoriumId" disabled readonly>
+                        </div>
+
+                        <!-- 步骤1：基本信息 -->
+                        <div id="form-step1" class="form-step active">
+                            <div class="form-group">
+                                <label for="auditoriumName">影厅名称:</label>
+                                <input type="text" id="auditoriumName" name="auditoriumName-step1" maxlength="20" placeholder="Common Auditorium" required>
+                            </div>
+                            
+                            <div class="row-seat-group">
+                                <div class="form-group">
+                                    <label for="rows">排数:</label>
+                                    <input type="number" id="rows" name="rows-step1" min="1" max="99" step="1" placeholder="1-99间的整数" pattern="[0-9]{1,2}" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cols">列数:</label>
+                                    <input type="number" id="cols" name="cols-step1" min="1" max="99" step="1" placeholder="1-99间的整数" pattern="[0-9]{1,2}" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>支持的视觉效果 (可多选):</label>
+                                <div class="visual-effects-container" id="visualEffectsContainer">
+                                    <!-- 动态生成视觉效果选项 -->
+                                </div>
+                            </div>
+                            
+                            <div class="button-group">
+                                <button type="button" class="btn-cancel" onclick="cancelNewAuditorium()">取消</button>
+                                <button type="button" class="btn-next" onclick="validateAndGoToStep2()">下一步</button>
+                            </div>
+                        </div>
+                        
+                        <!-- 步骤2：禁用座位 -->
+                        <div id="form-step2" class="form-step">
+                            <input type="hidden" id="auditoriumName-display" name="auditoriumName" readonly>
+                            <input type="hidden" id="rows-display" name="rows" readonly>
+                            <input type="hidden" id="cols-display" name="cols" readonly>        
+                            <div class="form-group">
+                                <label>座位布局 (勾选禁用，留空可用):</label>
+                                <div id="layout-preview" class="layout-preview"></div>
+                            </div>                          
+                            <div class="button-group">
+                                <button type="button" class="btn-back" onclick="goToStep(1)">返回</button>
+                                <button type="submit" class="btn-confirm">添加影厅</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <br>
+            
+            <!-- 现有影厅列表 -->
+            <div id="auditorium-items-container">
+                <!-- 动态生成影厅列表 -->
+            </div>
+            
+            <div id="no-results" class="no-results" style="display: none;">
+                <p>当前影院还没有影厅</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/PublicTool/CheckState.js"></script>
+    <script src="/PublicTool/Components/Components.js"></script>
+    <script src="/PublicTool/ShowMessage/ShowMessage.js"></script>
+    <script src="Auditoriums.js"></script>
+</body>
+</html>
